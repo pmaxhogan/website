@@ -1,0 +1,27 @@
+---  
+title: "Thanks for Watching! video generator"
+summary: "Thanks for Watching! video generator: for making the same joke unlimited times!"
+keywords: "programmer5000,thanks for watching,docker"
+---
+
+With the power of Docker, ffmpeg, Node, and other technologies, you can make *hilarous* videos like this!
+<video controls src="/assets/thanks-for-watching.mp4"></video>
+
+To make your own:
+```bash
+git clone https://github.com/realprogrammer5000/thanks-for-watching
+cd thanks-for-watching
+
+# build and start
+docker build -t thanks-for-watching .
+docker run -d --rm --publish 8000:5000 --name thanks-for-watching thanks-for-watching:latest
+
+# generate a video (replace with your own text)
+curl -G --data-urlencode "$(echo -ne 'text=Top 10 Reasons to\nLove Pineapple on Pizza')" http://localhost:8000/video --output out.mp4
+
+# play your video
+vlc out.mp4
+
+# remove the container when you're done
+docker rm --force thanks-for-watching
+```

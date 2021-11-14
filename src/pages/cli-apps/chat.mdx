@@ -1,0 +1,31 @@
+---
+title: "Chat"
+keywords: "programmer5000,chat,cli,cli app"
+summary: "Chat is a simple tcp-based chat client and server that supports nicknames, administration and other commands."
+---
+
+Chat is a simple tcp-based chat client and server that supports many commands:
+
+- `/help`  
+    Displays supported commands
+- `/changename <user> <new name>` (admin-only)  
+    Changes the name of a user
+- `/list`  
+    Lists current users
+- `/quit` (admin-only)  
+    Stops the server
+- `/banip <ip>` (admin-only)  
+    Bans a given IP from connecting and disconnects any current connections with that IP.
+- `/whois <name>`  
+    Displays the IP address associated with the given name
+- `/promote <name>`  
+    Promotes the given user to admin.
+- `/demote <name>`  
+    Demotes the given user to normal user.
+    
+    
+### Demo
+{{asciinemaEmbed 320173}}
+
+### Source
+Source code for `chat` is available [on Github](https://github.com/realprogrammer5000/chat).

@@ -1,0 +1,25 @@
+---
+title: "CalcMedic scraper"
+keywords: "programmer5000,calc,cli,cli app,calculus,scraper,download"
+summary: "Download videos, questions, rubrics and more from your CalcMedic course!"
+---
+
+Download videos, questions, rubrics and more from your CalcMedic course! Perfect for when your WiFi keeps cutting out.    
+
+### Usage
+```
+./calcmedic-download [authorizationToken] [blocksAccessToken] [schoolId]
+./calcmedic-download [harFile]
+
+Run this from the directory that you want data to be downloaded to.
+
+It's recommended that you use a HAR file to log in to the scraper. To do this, open the Chrome DevTools network panel, reload a calcmedic page, and click "Export HAR..." (the "download" button is the last button in the row right below the network tab). Provide the path to this file as the first argument.
+
+If you want to manually provide request parameters, you can:
+    authorizationToken should be the token provided in the authorization header (without the Bearer part), eg. eyJ0eXAiOiJ...
+    blocksAccessToken should be the token provided in the x-blocks-access-token, eg. eyJhbGciOiJ...
+    schoolId should be the ID of your school, found in the school_id query parameter 
+```
+
+### Source
+Source code can be found [on Github](https://github.com/realprogrammer5000/calcmedic-download).
