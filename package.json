@@ -20,6 +20,7 @@
     "gatsby-plugin-image": "^2.1.0",
     "gatsby-plugin-manifest": "^4.1.1",
     "gatsby-plugin-mdx": "^3.1.1",
+    "gatsby-plugin-mdx-frontmatter": "^0.0.4",
     "gatsby-plugin-react-helmet": "^5.1.0",
     "gatsby-plugin-sharp": "^4.1.1",
     "gatsby-plugin-sitemap": "^5.1.1",
