@@ -1,6 +1,6 @@
 import * as React from "react"
 import {MDXProvider} from "@mdx-js/react";
-import AsciinemaEmbed from "./asciinemia-embed";
+import AsciinemaEmbed from "./asciinema-embed";
 import KAEmbed from "./ka-embed";
 import "../styles/main.css"
 

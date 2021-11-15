@@ -6,7 +6,7 @@ const elemStyle = {
     display: "block"
 }
 
-export default function AsiinemiaEmbed(props){
+export default function AsciinemaEmbed(props){
     const {id, width, height} = props;
     const src = `https://asciinema.org/a/${id}/iframe`
 
