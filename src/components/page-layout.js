@@ -15,10 +15,13 @@ const MyLink = props => {
     }
 };
 
+const Video = props => props.block ? <video style={{maxWidth: 400, display: "block"}} controls {...props} /> : <video style={{maxWidth: 400}} controls {...props} />;
+
 const customComponents = {
     a: MyLink,
     AsciinemaEmbed,
-    KAEmbed
+    KAEmbed,
+    Video
 };
 
 export default function Layout({ children, pageContext: { frontmatter } }) {
