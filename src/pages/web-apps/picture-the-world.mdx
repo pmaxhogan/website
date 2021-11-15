@@ -1,0 +1,20 @@
+---
+title: "Picture the World"
+tags: [cv,web,js,node,aws,hackathon,collaborative,s3,ec2,rekognition,mongodb]
+summary: "CrowdAdvisor: Investment in the Age of Social Media"
+---
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQoHjw1TBWKRIUTZ3j6zYwLd6TuOepXr77DdB1_csz-qmNLTWlnD4T1JiPhqnNgTb-YEbsmPNdR54hh/embed?start=false&loop=false&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+As part of [HackDFW 2021](https://devpost.com/software/picture-the-world), I created Picture the World with 4 other group members. We wanted to create an interactive game that could represent different cultures and diversities by educating players with other languages and encouraging active engagement with learning.
+
+## What it does
+Each individual player, located anywhere in the world, can access the webapp and be presented with an image and a word. The image is a prompt that can be found in all cultures or countries, from prompts such as Family and Smile to objects like Fruit or Car. Along with this randomly chosen image, a translation of the word is given.  
+
+The key part of the program is that each image comes from another player, and each word is in the official language of the country that the image was taken in. This way, players can exchange cultures with other players and learn new words in other languages.
+
+## How it was built
+Our web app uses Node.js, React, and Gatsby.js for the frontend. The backend uses Node.js, Express.js, and MongoDB for the database. We implemented AWS S3 and AWS EC2 to host the server, and we used Amazon Rekognition to identify user-submitted photos through machine learning and match them across the database with specified parameters.
+
+## Source
+Source code for CrowdAdvisor is available [on Github](https://github.com/kerbstomps/hackdfw-2021).
