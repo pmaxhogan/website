@@ -1,10 +1,11 @@
 import * as React from "react"
+import {Helmet} from "react-helmet";
 
 export default function AsiinemiaEmbed(props){
-    const {id} = props;
-    const src = `https://asciinema.org/a/${id}.js`
+    const {id, width, height} = props;
+    const src = `https://asciinema.org/a/${id}/iframe`
 
     return (
-        <script src={src}/>
+        <iframe width={width} height={height} src={src}/>
     )
 }
