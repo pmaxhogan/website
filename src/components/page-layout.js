@@ -1,6 +1,7 @@
 import * as React from "react"
 import {MDXProvider} from "@mdx-js/react";
 import AsciinemaEmbed from "./asciinemia-embed";
+import KAEmbed from "./ka-embed";
 
 // override for <a> elements to ensure that links to external sites are safe and open in a new tab
 const MyLink = props => {
@@ -15,7 +16,8 @@ const MyLink = props => {
 
 const customComponents = {
     a: MyLink,
-    AsciinemaEmbed
+    AsciinemaEmbed,
+    KAEmbed
 };
 
 export default function Layout({ children, pageContext: { frontmatter } }) {
