@@ -5,9 +5,9 @@ import KAEmbed from "./ka-embed";
 
 // override for <a> elements to ensure that links to external sites are safe and open in a new tab
 const MyLink = props => {
-    const url = new URL(props.href || "#", window.location.href);
+    const isLocal = !props.href || (!props.href.startsWith("//") && !props.href.includes(":"));
 
-    if(url.origin === window.location.origin){
+    if(isLocal){
         return <a {...props} />
     }else{
         return <a rel="noopener noreferrer" target="_blank" {...props}/>
