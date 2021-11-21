@@ -4,6 +4,8 @@ import Project from "./project";
 export default function ProjectList({list, filter}){
     if(!list) return null;
 
+    list = list.sort((a, b) => (a.node.frontmatter.title > b.node.frontmatter.title) ? 1 : ((b.node.frontmatter.title > a.node.frontmatter.title) ? -1 : 0))
+
     let filterTags = [];
     if(filter){
         filterTags = filter.split(",");
@@ -11,5 +13,5 @@ export default function ProjectList({list, filter}){
     }
 
 
-    return list.map(page => <Project link={page.node.slug} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)
+    return list.map(page => <Project key={Math.random()} link={page.node.slug} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)
 }
