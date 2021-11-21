@@ -10,8 +10,20 @@ import ProjectList from "../components/project-list"
 
 I'm Max! This is a collection of various projects I've worked on over the years.
 
-## Web apps
+## Featured
+<ProjectList list={props.data.allMdx.edges} filter="featured" />
+
+## Web Apps
 <ProjectList list={props.data.allMdx.edges} filter="web" />
+
+## Games
+<ProjectList list={props.data.allMdx.edges} filter="game" />
+
+## CLI Apps
+<ProjectList list={props.data.allMdx.edges} filter="cli" />
+
+## Joke Projects
+<ProjectList list={props.data.allMdx.edges} filter="joke" />
 
 
 I've built [Gifted](/gifted), some [web apps](/web-apps/), some [cli apps](/cli-apps/), [some simple games](/games/), and [some other things](/misc).

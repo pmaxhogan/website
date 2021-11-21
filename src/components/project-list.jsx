@@ -1,6 +1,10 @@
 import * as React from "react"
 import Project from "./project";
 
+const listStyle = {
+    display: 'flex'
+};
+
 export default function ProjectList({list, filter}){
     if(!list) return null;
 
@@ -13,5 +17,7 @@ export default function ProjectList({list, filter}){
     }
 
 
-    return list.map(page => <Project key={Math.random()} link={page.node.slug} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)
+    return <div style={listStyle}>
+        {list.map(page => <Project key={Math.random()} link={page.node.slug} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)}
+    </div>
 }
