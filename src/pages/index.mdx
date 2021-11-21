@@ -1,8 +1,35 @@
 ---
 title: "Hello!"
-tags: [profile,site]
+tags: [profile,site,no-show]
 summary: "I'm Max! This is a (small) collection of various projects I've worked on over the years. "
 ---
 
-I'm Max! This is a collection of various projects I've worked on over the years. I've built [Gifted](/gifted), some [web apps](/web-apps/), some [cli apps](/cli-apps/), [some simple games](/games/), and [some other things](/misc).
+import { graphql } from "gatsby"
+import Project from "../components/project"
+import ProjectList from "../components/project-list"
 
+I'm Max! This is a collection of various projects I've worked on over the years.
+
+## Web apps
+<ProjectList list={props.data.allMdx.edges} filter="web" />
+
+
+I've built [Gifted](/gifted), some [web apps](/web-apps/), some [cli apps](/cli-apps/), [some simple games](/games/), and [some other things](/misc).
+
+export const pageQuery = graphql`
+query {
+allMdx {
+edges {
+node {
+id
+frontmatter {
+tags
+title
+summary
+}
+slug
+}
+}
+}
+}
+`
