@@ -19,24 +19,17 @@ I'm Max! This is a collection of various projects I've worked on over the years.
 ## Featured Projects
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
 
-## Projects by Type
-<ProjectTabs data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />
+<ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />
 
-## Projects by Language
+<ProjectTabs by="Language" data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", "python", "rust"]} />
 
-<ProjectTabs data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", "python", "rust"]} />
+<ProjectTabs by="Library" data={props.data.allMdx.edges} tabs={["vue", "react", ["tensorflow", "TensorFlow"], "electron"]} />
 
-## Projects by Library
-
-<ProjectTabs data={props.data.allMdx.edges} tabs={["vue", "react", ["tensorflow", "TensorFlow"], "electron"]} />
-
-## Projects by DB
-
-<ProjectTabs data={props.data.allMdx.edges} tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j"]} />
+<ProjectTabs by="DB" data={props.data.allMdx.edges} tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j"]} />
 
 ## Projects by Cloud Platform
 
-<ProjectTabs data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"], "heroku"]} />
+<ProjectTabs by="Cloud Platform" data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"], "heroku"]} />
 
 
 export const pageQuery = graphql`

@@ -1,3 +1,10 @@
 img{
   max-width: 100%;
 }
+
+.react-tabs__tab-list{
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: white;
+}
