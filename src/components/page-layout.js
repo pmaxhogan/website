@@ -39,7 +39,7 @@ export default function Layout(props) {
     }
   `)
 
-    const categories = "Type,Language,Library,Cloud Platform".split(",");
+    const categories = "Type,Language,Library,DB,Cloud Platform".split(",");
 
     const { children, pageContext: { frontmatter } } = props;
     return <>

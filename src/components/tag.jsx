@@ -11,7 +11,7 @@ const tagCategories = {
     languages: ["#0023ff", ['js', 'java', 'python']],
     types: ["#009dff", ['web', 'game', 'cli', 'joke']],
     libraries: ["#00ffeb", ['vue', 'react', 'tensorflow', 'electron']],
-    dbs: ["#a80000", ['s3', 'neo4j', 'firestore', 'mongodb']],
+    dbs: ["#a80000", ['s3', 'neo4j', 'firestore', 'mongodb', 'memcached']],
     platform: ["#d90000", ['gcp', 'aws', 'firebase', "heroku"]]
 };
 
