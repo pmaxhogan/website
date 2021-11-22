@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import Tag from "./tag";
 
 const projectStyle = {
@@ -18,7 +18,7 @@ export default function Project(props){
 
     return <div style={projectStyle}>
         <a href={props.link}><h3>{props.title}</h3></a>
-        <div style={tagsContainerStyle}>{props.tags.map(tag => <Tag key={Math.random()} name={tag} />)}</div>
+        <div style={tagsContainerStyle}>{props.tags.sort().map(tag => <Tag key={Math.random()} name={tag} />)}</div>
             {props.summary}
     </div>
 }

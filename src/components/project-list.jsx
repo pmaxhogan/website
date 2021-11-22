@@ -2,7 +2,8 @@ import * as React from "react"
 import Project from "./project";
 
 const listStyle = {
-    display: 'flex'
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
 };
 
 export default function ProjectList({list, filter}){

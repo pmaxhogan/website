@@ -1,7 +1,7 @@
 ---
 title: "SlipstreamVPN"
-tags: [js,node,firebase,firestore,digitalocean,circleci,gcp,vpn,proxy,stripe,webhook,chrome extension]
-summary: "Unblock sites and securely browse ad-free at extremely fast speeds with our no-logs proxy VPN connection."
+tags: [js,node,firebase,firestore,digitalocean,circleci,gcp,vpn,proxy,stripe,webhook,chrome extension,memcached,featured]
+summary: "I designed and architected a VPN/proxy server and Chrome extension."
 ---
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
@@ -14,6 +14,8 @@ SlipstreamVPN includes a generous free tier, with limits on bandwidth and monthl
 
 ## DevOps
 SlipstreamVPN's proxy server is run as a DigitalOcean droplet due to favorable data transfer rates compared to other cloud solutions. Firebase is used to manage user authentication, and Google Cloud Platform is used to manage application logs and monitor availability. The main site, account management site, and proxy server are checked for availability once every minute from 5 regions via GCP Monitoring. If any server fails to respond, returns a HTTP status other than 200, or fails to respond within a timeout, an alert is created and a notification is sent to my mobile device.
+
+Memcached is used to cache data before it is uploaded to Firebase. Firebase Firestore is used to store account information and data usage.
 
 A dashboard, shown below, unifies various statistics from GCP Monitoring. (Note that the "No data is available for the selected time frame" warnings are present because there were no application errors in the last timeframe.)
 

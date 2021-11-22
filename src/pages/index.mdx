@@ -7,23 +7,36 @@ summary: "I'm Max! This is a (small) collection of various projects I've worked 
 import { graphql } from "gatsby"
 import Project from "../components/project"
 import ProjectList from "../components/project-list"
+import ProjectTabs from "../components/project-tabs"
+import { Tab, Tabs, TabList, TabPanel, resetIdCounter } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+resetIdCounter();
+
 
 I'm Max! This is a collection of various projects I've worked on over the years.
 
-## Featured
+
+## Featured Projects
 <ProjectList list={props.data.allMdx.edges} filter="featured" />
 
-## Web Apps
-<ProjectList list={props.data.allMdx.edges} filter="web" />
+## Projects by Type
+<ProjectTabs data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />
 
-## Games
-<ProjectList list={props.data.allMdx.edges} filter="game" />
+## Projects by Language
 
-## CLI Apps
-<ProjectList list={props.data.allMdx.edges} filter="cli" />
+<ProjectTabs data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", "python", "rust"]} />
 
-## Joke Projects
-<ProjectList list={props.data.allMdx.edges} filter="joke" />
+## Projects by Library
+
+<ProjectTabs data={props.data.allMdx.edges} tabs={["vue", "react", ["tensorflow", "TensorFlow"], "electron"]} />
+
+## Projects by DB
+
+<ProjectTabs data={props.data.allMdx.edges} tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j"]} />
+
+## Projects by Cloud Platform
+
+<ProjectTabs data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"]]} />
 
 
 I've built [Gifted](/gifted), some [web apps](/web-apps/), some [cli apps](/cli-apps/), [some simple games](/games/), and [some other things](/misc).
