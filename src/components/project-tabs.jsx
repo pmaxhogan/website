@@ -1,6 +1,7 @@
 import * as React from "react";
 import ProjectList from "../components/project-list";
 import {resetIdCounter, Tab, TabList, TabPanel, Tabs} from "react-tabs";
+import 'react-tabs/style/react-tabs.css';
 
 const titleCase = str => str.split(' ')
     .map(w => w[0].toUpperCase() + w.substr(1).toLowerCase())

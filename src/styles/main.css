@@ -1,6 +1,7 @@
 body{
   margin: 0;
   --header-height: 50px;
+  font-family: "Open Sans";
 }
 
 img{
