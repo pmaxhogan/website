@@ -69,8 +69,10 @@ header img{
   height: 30px;
 }
 
-header a{
+header a, h1, h2, h3, h4, h5, h6{
   color: black;
+  background: lightblue;
+  padding: 4px;
 }
 
 header > *{
@@ -95,15 +97,30 @@ main{
   margin: 20px;
 }
 
+.full-width{
+  width: 100vw;
+  position: relative;
+}
+
 @media screen and (min-width: 760px) {
   main {
     margin: 0 10%;
+  }
+
+  .full-width{
+    width: 125%;
+    left: -10vw;
   }
 }
 
 @media screen and (min-width: 1200px) {
   main {
     margin: 0 20%;
+  }
+
+  .full-width{
+    width: 166.66667%;
+    left: -20vw;
   }
 }
 

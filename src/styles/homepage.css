@@ -1,0 +1,24 @@
+path{
+  fill: lightblue;
+}
+
+#header-block{
+  background: lightblue;
+  padding-top: 250px;
+  padding-right: 50px;
+  padding-bottom: 150px;
+  padding-left: 50px;
+  margin: 0;
+  text-align: center;
+}
+
+#header-block h1{
+  font-size: 94px;
+  margin: 0;
+  font-family: "Raleway";
+}
+
+#header-block p{
+  font-size: 30px;
+  margin: 0;
+}

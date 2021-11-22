@@ -43,7 +43,7 @@ export default function Layout(props) {
 
     const categories = "Type,Language,Library,DB,Cloud Platform".split(",");
 
-    const { children, pageContext: { frontmatter } } = props;
+    const { children, pageContext: { frontmatter }, path} = props;
     return <>
         <Helmet>
             <meta charSet="utf-8" />
@@ -62,7 +62,7 @@ export default function Layout(props) {
             </span>
         </header>
         <main>
-            <h1>{frontmatter.title}</h1>
+            {path !== "/" && <h1>{frontmatter.title}</h1>}
             {frontmatter.tags && !frontmatter.tags.includes("no-show") && <TagsList tags={frontmatter.tags}/>}
             <MDXProvider components={customComponents}>{children}</MDXProvider>
             <code>{JSON.stringify(frontmatter)}</code>

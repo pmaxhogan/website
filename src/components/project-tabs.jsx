@@ -27,7 +27,7 @@ export default function ProjectTabs({data, tabs, showImg, by}) {
     return <>
         <Tabs>
             <span id={"by-" + by.toLowerCase()}></span>
-        <div class="project-tabs-sticky">
+        <div className="project-tabs-sticky">
         <h2>Projects by {by}</h2>
         <TabList>
             {tabs && tabs.map(tab => <Tab key={Math.random()}>{tab && tab.title}</Tab>)}
