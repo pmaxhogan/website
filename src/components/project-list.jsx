@@ -19,6 +19,6 @@ export default function ProjectList({list, filter}){
 
 
     return <div style={listStyle}>
-        {list.map(page => <Project key={Math.random()} link={page.node.slug} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)}
+        {list.map(page => <Project key={Math.random()} link={page.node.slug} img={page.node.frontmatter.img} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)}
     </div>
 }
