@@ -51,6 +51,10 @@ header > *{
   margin: 0 20px;
 }
 
+.projects-by{
+  padding-left: 3px;
+}
+
 .projects-by > :not(:last-of-type)::after{
   content: " • ";
 }
