@@ -47,6 +47,10 @@ header img{
   height: 30px;
 }
 
+header a{
+  color: black;
+}
+
 header > *{
   margin: 0 20px;
 }
