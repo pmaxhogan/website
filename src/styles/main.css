@@ -55,6 +55,11 @@ header > *{
   margin: 0 20px;
 }
 
+pre{
+  word-break: break-all;
+  white-space: break-spaces;
+}
+
 .projects-by{
   padding-left: 3px;
 }
