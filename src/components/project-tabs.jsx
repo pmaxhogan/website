@@ -8,8 +8,7 @@ const titleCase = str => str.split(' ')
 
 resetIdCounter();
 
-export default function ProjectTabs(props) {
-    let {data, tabs} = props;
+export default function ProjectTabs({data, tabs, showImg}) {
     if(tabs instanceof Array){
         tabs = tabs.map(tab => tab instanceof Array ?
             {filter: tab[0], title: tab[1]} :
@@ -23,7 +22,7 @@ export default function ProjectTabs(props) {
         </TabList>
         {tabs && tabs.map(tab =>
             <TabPanel key={Math.random()}>
-                <ProjectList list={data} filter={tab.filter}/>
+                <ProjectList showImg={showImg} list={data} filter={tab.filter}/>
             </TabPanel>
         )}
     </Tabs>;

@@ -6,7 +6,7 @@ const listStyle = {
     gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
 };
 
-export default function ProjectList({list, filter}){
+export default function ProjectList({list, filter, showImg}){
     if(!list) return null;
 
     list = list.sort((a, b) => (a.node.frontmatter.title > b.node.frontmatter.title) ? 1 : ((b.node.frontmatter.title > a.node.frontmatter.title) ? -1 : 0))
@@ -19,6 +19,6 @@ export default function ProjectList({list, filter}){
 
 
     return <div style={listStyle}>
-        {list.map(page => <Project key={Math.random()} link={page.node.slug} img={page.node.frontmatter.img} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)}
+        {list.map(page => <Project key={Math.random()} link={page.node.slug} img={showImg && page.node.frontmatter.img} title={page.node.frontmatter.title} summary={page.node.frontmatter.summary} tags={page.node.frontmatter.tags.filter(tag => !filterTags.includes(tag))} />)}
     </div>
 }

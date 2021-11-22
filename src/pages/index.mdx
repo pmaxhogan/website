@@ -17,7 +17,7 @@ I'm Max! This is a collection of various projects I've worked on over the years.
 
 
 ## Featured Projects
-<ProjectList list={props.data.allMdx.edges} filter="featured" />
+<ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
 
 ## Projects by Type
 <ProjectTabs data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />
@@ -36,7 +36,7 @@ I'm Max! This is a collection of various projects I've worked on over the years.
 
 ## Projects by Cloud Platform
 
-<ProjectTabs data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"]]} />
+<ProjectTabs data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"], "heroku"]} />
 
 
 I've built [Gifted](/gifted), some [web apps](/web-apps/), some [cli apps](/cli-apps/), [some simple games](/games/), and [some other things](/misc).
