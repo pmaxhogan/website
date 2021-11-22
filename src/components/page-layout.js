@@ -6,6 +6,8 @@ import "../styles/main.css"
 import {Helmet} from "react-helmet";
 import logo from "../images/icon.png"
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import Tag from "./tag";
+import TagsList from "./tags-list";
 
 // override for <a> elements to ensure that links to external sites are safe and open in a new tab
 const MyLink = props => {
@@ -61,6 +63,7 @@ export default function Layout(props) {
         </header>
         <main>
             <h1>{frontmatter.title}</h1>
+            {frontmatter.tags && !frontmatter.tags.includes("no-show") && <TagsList tags={frontmatter.tags}/>}
             <MDXProvider components={customComponents}>{children}</MDXProvider>
             <code>{JSON.stringify(frontmatter)}</code>
         </main>

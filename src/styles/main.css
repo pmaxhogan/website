@@ -106,3 +106,9 @@ main{
     margin: 0 20%;
   }
 }
+
+.tags-container{
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
