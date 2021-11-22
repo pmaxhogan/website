@@ -48,8 +48,9 @@ export default function Layout(props) {
             <title>{frontmatter.title}</title>
         </Helmet>
         <header>
-            <a href={"/"}>
-                <img src={logo} alt="Logo" /></a>
+            {/*<a href={"/"}>
+                <img src={logo} alt="Logo" />
+            </a>*/}
             <a href={"/"}>
                 {siteMetadata.site.siteMetadata.title}
             </a>

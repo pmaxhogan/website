@@ -1,7 +1,7 @@
 ---
 title: "Hello!"
 tags: [profile,site,no-show]
-summary: "I'm Max! This is a (small) collection of various projects I've worked on over the years. "
+summary: "I'm Max Hogan! This is a (small) collection of various projects I've worked on over the years. "
 ---
 
 import { graphql } from "gatsby"
@@ -11,8 +11,8 @@ import ProjectTabs from "../components/project-tabs"
 
 I'm Max! This is a collection of various projects I've worked on over the years.
 
-
-<div class="project-tabs-sticky"><h2 id="featured">Featured Projects</h2></div>
+<span id="featured"/>
+<div class="project-tabs-sticky"><h2>Featured Projects</h2></div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
 
 <ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />

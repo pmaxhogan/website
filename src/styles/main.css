@@ -31,10 +31,15 @@ header{
   align-items: center;
   position: fixed;
   box-shadow: #616161 0 0 2px 1px;
-  height: var(--header-height);
+  top: 0;
+  min-height: var(--header-height);
   width: 100%;
+  max-width: 100%;
   z-index: 1000;
   background: white;
+  flex-wrap: wrap;
+  padding: 5px;
+  /*justify-content: space-between;*/
 }
 
 header img{
@@ -43,7 +48,7 @@ header img{
 }
 
 header > *{
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .projects-by > :not(:last-of-type)::after{
