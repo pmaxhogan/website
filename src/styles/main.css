@@ -1,10 +1,67 @@
+body{
+  margin: 0;
+  --header-height: 50px;
+}
+
 img{
   max-width: 100%;
 }
 
-.react-tabs__tab-list{
+.project-tabs-sticky{
   position: sticky;
-  top: 0;
+  top: var(--header-height);
   z-index: 3;
   background: white;
+  padding-top: 5px;
+}
+
+.project-tabs-sticky > *:only-child{
+  display: inline-block;
+}
+
+
+.react-tabs__tab-list{
+  margin-left: 4px;
+}
+
+header{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position: fixed;
+  box-shadow: #616161 0 0 2px 1px;
+  height: var(--header-height);
+  width: 100%;
+  z-index: 1000;
+  background: white;
+}
+
+header img{
+  width: 30px;
+  height: 30px;
+}
+
+header > *{
+  margin-left: 20px;
+}
+
+.projects-by > :not(:last-of-type)::after{
+  content: " • ";
+}
+
+main{
+  padding-top: var(--header-height);
+  margin: 20px;
+}
+
+@media screen and (min-width: 760px) {
+  main {
+    margin: 0 10%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    margin: 0 20%;
+  }
 }

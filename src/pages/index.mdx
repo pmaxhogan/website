@@ -16,7 +16,7 @@ resetIdCounter();
 I'm Max! This is a collection of various projects I've worked on over the years.
 
 
-## Featured Projects
+<div class="project-tabs-sticky"><h2 id="featured">Featured Projects</h2></div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
 
 <ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />

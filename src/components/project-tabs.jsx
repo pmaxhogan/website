@@ -25,8 +25,8 @@ export default function ProjectTabs({data, tabs, showImg, by}) {
 
     return <>
         <Tabs>
-        <div style={mainStyle}>
-        <h3>Projects by {by}</h3>
+        <div class="project-tabs-sticky">
+        <h2 id={"by-" + by.toLowerCase()}>Projects by {by}</h2>
         <TabList>
             {tabs && tabs.map(tab => <Tab key={Math.random()}>{tab && tab.title}</Tab>)}
         </TabList>

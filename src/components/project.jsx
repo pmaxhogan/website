@@ -19,7 +19,7 @@ export default function Project(props){
     if(props.tags.includes("no-show")) return null;
 
     return <div className="project">
-        <a href={props.link}><h3>{props.title}</h3></a>
+        <a href={props.link}><h2>{props.title}</h2></a>
         {props.img && <img src={props.img} style={imgStyle} alt=""/>}
         <div className="tags-container" style={tagsContainerStyle}>{props.tags.sort().map(tag => <Tag key={Math.random()} name={tag} />)}</div>
             {props.summary}

@@ -8,7 +8,7 @@
 
 .project{
   text-align: center;
-  box-shadow: 0 0 3px 1px #cccccc;
+  box-shadow: 0 0 0px 1px rgb(170, 170, 170);
   display: flex;
   position: relative;
   flex-direction: column;
@@ -20,14 +20,14 @@
 }
 
 .project:hover, .project:focus {
-  box-shadow: 0 0 5px 2px #cccccc;
+  box-shadow: 0 0 5px 2px rgb(170, 170, 170);
 }
 
 .project > *{
   margin: 5px 0;
 }
 
-.project h3{
+.project h2{
   color: black;
   margin: 0;
 }

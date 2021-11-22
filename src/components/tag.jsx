@@ -18,7 +18,6 @@ const tagCategories = {
 export default function Tag({name}){
     const languageCategories = Object.values(tagCategories).filter(category => category[1].includes(name));
     const colorStyle = languageCategories && languageCategories[0] && languageCategories[0][0];
-    console.log(name, colorStyle);
 
     return <code style={tagStyle(colorStyle)}>{name}</code>
 }
