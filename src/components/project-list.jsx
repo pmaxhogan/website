@@ -3,7 +3,8 @@ import Project from "./project";
 
 const listStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'
+    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+    gridTemplateRows: 'repeat(auto-fit, minmax(300px, 1fr))'
 };
 
 export default function ProjectList({list, filter, showImg}){
