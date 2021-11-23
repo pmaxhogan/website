@@ -101,6 +101,7 @@ main{
 
 .full-width{
   width: 100vw;
+  left: -20px;
   position: relative;
 }
 

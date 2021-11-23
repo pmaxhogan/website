@@ -4,10 +4,7 @@ path{
 
 #header-block{
   background: lightblue;
-  padding-top: 250px;
-  padding-right: 50px;
-  padding-bottom: 150px;
-  padding-left: 50px;
+  padding: 250px 50px 150px;
   margin: 0;
   text-align: center;
 }
@@ -21,4 +18,19 @@ path{
 #header-block p{
   font-size: 30px;
   margin: 0;
+}
+
+@media screen and (max-width: 760px){
+  #header-block h1 {
+    font-size: 50px;
+  }
+
+  #header-block p{
+    font-size: 25px;
+  }
+
+  #header-block {
+    background: lightblue;
+    padding: 107px 50px 70px;
+  }
 }
