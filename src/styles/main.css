@@ -73,6 +73,8 @@ header a, h1, h2, h3, h4, h5, h6{
   color: black;
   background: lightblue;
   padding: 4px;
+  text-decoration: none;
+  font-family: 'Raleway';
 }
 
 header > *{

@@ -20,6 +20,11 @@ const MyLink = props => {
     }
 };
 
+const sitenameStyle = {
+    fontFamily: "Raleway",
+    fontWeight: 900
+};
+
 const Video = props => props.block ? <video style={{maxWidth: 400, display: "block"}} controls {...props} /> : <video style={{maxWidth: 400}} controls {...props} />;
 
 const customComponents = {
@@ -53,7 +58,7 @@ export default function Layout(props) {
             {/*<a href={"/"}>
                 <img src={logo} alt="Logo" />
             </a>*/}
-            <a href={"/"}>
+            <a style={sitenameStyle} href={"/"}>
                 {siteMetadata.site.siteMetadata.title}
             </a>
             <a href="/#featured">Featured</a>
