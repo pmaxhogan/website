@@ -6,7 +6,6 @@ module.exports = {
     plugins: [
         "gatsby-plugin-image",
         "gatsby-plugin-react-helmet",
-        "gatsby-plugin-sitemap",
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -64,6 +63,40 @@ module.exports = {
                     appId: "1:789254006298:web:0cfcd28bc4bbdcb11d13a3",
                     measurementId: "G-HX7T79EKDN"
                 }
+            },
+        },
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                resolvePages: ({ allMdx: { nodes: pages } }) =>
+                    pages.map(mdx => ({
+                        path: `/${mdx.slug}`,
+                        // lastmod: mdx.frontmatter.date,
+                        changefreq: "weekly",
+                        priority: 0.7,
+                    })),
+                serialize: ({ path, changefreq, priority }) => {
+                    return {
+                        url: path,
+                        changefreq,
+                        priority,
+                    }
+                },
+                resolveSiteUrl: () => "https://maxhogan.dev",
+                query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allMdx{
+            nodes {
+              slug
+            }
+          }
+        }
+      `
             },
         },
     ],
