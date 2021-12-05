@@ -68,6 +68,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sitemap`,
             options: {
+                entryLimit: 30,
                 resolvePages: ({ allMdx: { nodes: pages } }) =>
                     pages.map(mdx => ({
                         path: `/${mdx.slug}`,
