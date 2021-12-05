@@ -4,9 +4,7 @@ import AsciinemaEmbed from "./asciinema-embed";
 import KAEmbed from "./ka-embed";
 import "../styles/main.css"
 import {Helmet} from "react-helmet";
-import logo from "../images/icon.png"
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import Tag from "./tag";
+import { useStaticQuery, graphql } from 'gatsby'
 import TagsList from "./tags-list";
 
 // override for <a> elements to ensure that links to external sites are safe and open in a new tab
@@ -63,7 +61,7 @@ export default function Layout(props) {
             </a>
             <a href="/#featured">Featured</a>
             <span>
-                Projects by <span className="projects-by">{categories.map(category => <span><a href={"/#by-" + category.toLowerCase()}>{category}</a></span>)}</span>
+                Projects by <span className="projects-by">{categories.map(category => <span key={Math.random()}><a href={"/#by-" + category.toLowerCase()}>{category}</a></span>)}</span>
             </span>
         </header>
         <main>

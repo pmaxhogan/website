@@ -1,5 +1,4 @@
 import * as React from "react";
-import Tag from "./tag";
 import "../styles/project.css";
 import TagsList from "./tags-list";
 

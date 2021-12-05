@@ -7,13 +7,6 @@ const titleCase = str => str.split(' ')
     .map(w => w[0].toUpperCase() + w.substr(1).toLowerCase())
     .join(' ');
 
-const mainStyle = {
-    position: 'sticky',
-    top: 0,
-    zIndex: 3,
-    background: 'white'
-}
-
 resetIdCounter();
 
 export default function ProjectTabs({data, tabs, showImg, by}) {
@@ -26,7 +19,7 @@ export default function ProjectTabs({data, tabs, showImg, by}) {
 
     return <>
         <Tabs>
-            <span id={"by-" + by.toLowerCase()}></span>
+            <span id={"by-" + by.toLowerCase()}/>
         <div className="project-tabs-sticky">
         <h2>Projects by {by}</h2>
         <TabList>
