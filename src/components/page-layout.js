@@ -51,6 +51,7 @@ export default function Layout(props) {
         <Helmet>
             <meta charSet="utf-8" />
             <title>{frontmatter.title}</title>
+            <meta name="description" content={frontmatter.summary} />
         </Helmet>
         <header>
             {/*<a href={"/"}>
