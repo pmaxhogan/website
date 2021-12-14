@@ -99,6 +99,23 @@ main{
   margin: 20px;
 }
 
+path{
+  fill: lightblue;
+}
+
+#footer-main{
+  background: lightblue;
+  padding: 0 10px 10px;
+}
+
+#footer-main code{
+  display: block;
+}
+
+footer svg{
+  margin-bottom: -10px;
+}
+
 .full-width{
   width: 100vw;
   left: -20px;
