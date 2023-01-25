@@ -61,9 +61,11 @@ export default function Layout(props) {
                 {siteMetadata.site.siteMetadata.title}
             </a>
             <a href="/#featured">Featured</a>
+            <a href="/#work">Work</a>
             <span>
                 Projects by <span className="projects-by">{categories.map(category => <span key={Math.random()}><a href={"/#by-" + category.toLowerCase()}>{category}</a></span>)}</span>
             </span>
+            <a href="/#socials">Socials</a>
         </header>
         <main>
             {path !== "/" && <h1>{frontmatter.title}</h1>}

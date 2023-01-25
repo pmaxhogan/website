@@ -77,8 +77,8 @@ header a, h1, h2, h3, h4, h5, h6{
   font-family: 'Raleway';
 }
 
-header > *{
-  margin: 0 20px;
+header > * {
+  margin: 0px 0px 0 20px;
 }
 
 pre{

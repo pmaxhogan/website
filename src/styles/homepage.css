@@ -30,3 +30,18 @@
     padding: 107px 50px 70px;
   }
 }
+
+#socials-list img {
+  height: 1.5em;
+  padding-right: 3px;
+}
+
+#socials-list a {
+  display: flex;
+  align-items: center;
+}
+
+#socials-list {
+  list-style-type: none;
+  padding-inline-start: 20px;
+}

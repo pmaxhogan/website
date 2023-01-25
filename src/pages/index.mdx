@@ -5,12 +5,12 @@ summary: "I'm Max Hogan! This is a collection of the various projects that I've 
 ---
 
 import { graphql } from "gatsby"
-import Project from "../components/project"
 import ProjectList from "../components/project-list"
 import ProjectTabs from "../components/project-tabs"
 import "../styles/homepage.css"
+import "../styles/project.css";
 
-<div class="full-width">
+<div className="full-width">
 <div id="header-block">
 <h1>Max's Portfolio</h1>
 <p>Hello, I'm Max Hogan! This is a collection of various projects I've worked on over the years.</p>
@@ -19,10 +19,14 @@ import "../styles/homepage.css"
 </div>
 
 <span id="featured"/>
-<div class="project-tabs-sticky"><h2>Featured Projects</h2></div>
+<div className="project-tabs-sticky"><h2>Featured Projects</h2></div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
+<span id="work"/>
+<div className="project-tabs-sticky"><h2>Work Experience</h2></div>
+<ProjectList showImg list={props.data.allMdx.edges} filter="work" />
 
-<ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], , "collaborative", "joke"]} />
+
+<ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], "collaborative", "joke"]} />
 
 <ProjectTabs by="Language" data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", "python", "rust"]} />
 
@@ -31,6 +35,17 @@ import "../styles/homepage.css"
 <ProjectTabs by="DB" data={props.data.allMdx.edges} tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j", "memcached"]} />
 
 <ProjectTabs by="Cloud Platform" data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"], "heroku", ["digitalocean", "Digital Ocean"]]} />
+
+
+<span id="socials"/>
+<div className="project-tabs-sticky">
+    <h2>Social Sites</h2>
+    <p>Check out my socials!</p>
+    <ul id="socials-list">
+        <li><a href="https://github.com/pmaxhogan"><img src="/images/github-icon.png" alt="github icon"/>@pmaxhogan</a></li>
+        <li><a href="https://www.linkedin.com/in/pmaxhogan/"><img src="/images/linkedin-icon.png" alt="linkedin icon"/>@pmaxhogan</a></li>
+    </ul>
+</div>
 
 
 export const pageQuery = graphql`
