@@ -21,7 +21,7 @@ img{
 }
 
 
-.react-tabs__tab-list{
+#gatsby-focus-wrapper .react-tabs__tab-list{
   margin-left: 4px;
 }
 
@@ -148,4 +148,14 @@ footer svg{
   margin: 10px 0;
   display: flex;
   flex-wrap: wrap;
+}
+
+#gatsby-focus-wrapper{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#spacer{
+  flex-grow: 1;
 }
