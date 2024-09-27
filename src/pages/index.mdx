@@ -21,11 +21,16 @@ import "../styles/project.css";
 <span id="featured"/>
 <div className="project-tabs-sticky"><h2>Featured Projects</h2></div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
+
 <span id="work"/>
 <div className="project-tabs-sticky"><h2>Work Experience</h2></div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="work" />
 
+<span id="certs"/>
+<div className="project-tabs-sticky"><h2>Certifications</h2></div>
+<ProjectList showImg list={props.data.allMdx.edges} filter="cert" />
 
+<span id="web"/>
 <ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], "collaborative", "joke"]} />
 
 <ProjectTabs by="Language" data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", ["ts", "TS"], "python", "rust"]} />
