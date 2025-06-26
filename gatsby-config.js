@@ -14,11 +14,7 @@ module.exports = {
         },
         {
             resolve: "gatsby-plugin-mdx",
-            options: {
-                defaultLayouts: {
-                    pages: require.resolve("./src/components/page-layout.js")
-                }
-            }
+            options: {}
         },
         "gatsby-plugin-sharp",
         "gatsby-transformer-sharp",
@@ -41,41 +37,28 @@ module.exports = {
         {
             resolve: "gatsby-plugin-mdx-frontmatter"
         },
-        {
-            resolve: "gatsby-plugin-firebase",
-            options: {
-                features: {
-                    auth: false,
-                    database: false,
-                    firestore: false,
-                    storage: false,
-                    messaging: false,
-                    functions: false,
-                    performance: false,
-                    analytics: true,
-                },
-                credentials: {
-                    apiKey: "AIzaSyADK_b5yOxsZma7H9Bufu-HKpRrxyuPMGk",
-                    authDomain: "maxs-portfolio.firebaseapp.com",
-                    projectId: "maxs-portfolio",
-                    storageBucket: "maxs-portfolio.appspot.com",
-                    messagingSenderId: "789254006298",
-                    appId: "1:789254006298:web:0cfcd28bc4bbdcb11d13a3",
-                    measurementId: "G-HX7T79EKDN"
-                }
-            },
-        },
+        
         {
             resolve: `gatsby-plugin-sitemap`,
             options: {
                 entryLimit: 30,
-                resolvePages: ({ allMdx: { nodes: pages } }) =>
-                    pages.map(mdx => ({
-                        path: `/${mdx.slug}`,
-                        // lastmod: mdx.frontmatter.date,
-                        changefreq: "weekly",
-                        priority: 0.7,
-                    })),
+                resolvePages: ({ allMdx: { nodes: pages } }) => {
+                    return pages.map(mdx => {
+                        const slug = mdx.fields && mdx.fields.slug;
+                        if (!slug) {
+                            // eslint-disable-next-line no-console
+                            console.warn('gatsby-plugin-sitemap: Skipping MDX node with invalid slug:', mdx);
+                        }
+                        
+                        console.log('slug:', slug);
+                        return {
+                            path: slug ? slug : undefined,
+                            // lastmod: mdx.frontmatter.date,
+                            changefreq: "weekly",
+                            priority: 0.7,
+                        };
+                    });
+                },
                 serialize: ({ path, changefreq, priority }) => {
                     return {
                         url: path,
@@ -93,7 +76,7 @@ module.exports = {
           }
           allMdx{
             nodes {
-              slug
+              fields { slug }
             }
           }
         }

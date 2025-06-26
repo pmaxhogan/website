@@ -1,5 +1,3 @@
-import "@fontsource/open-sans";
-import "@fontsource/raleway";
 import * as React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { mdxComponents } from "./src/mdx-components";

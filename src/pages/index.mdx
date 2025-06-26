@@ -1,68 +1,114 @@
 ---
 title: "Max's Portfolio"
-tags: [profile,site,no-show]
+tags: [profile, site, no-show]
 summary: "I'm Max Hogan! This is a collection of the various projects that I've created!"
 ---
 
-import { graphql } from "gatsby"
-import ProjectList from "../components/project-list"
-import ProjectTabs from "../components/project-tabs"
-import "../styles/homepage.css"
+import { graphql } from "gatsby";
+import ProjectList from "../components/project-list";
+import ProjectTabs from "../components/project-tabs";
+import "../styles/homepage.css";
 import "../styles/project.css";
 
 <div className="full-width">
-<div id="header-block">
-<h1>Max's Portfolio</h1>
-<p>Hello, I'm Max Hogan! This is a collection of various projects I've worked on over the years.</p>
-</div>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fillOpacity="1" d="M0,96L30,90.7C60,85,120,75,180,96C240,117,300,171,360,208C420,245,480,267,540,240C600,213,660,139,720,90.7C780,43,840,21,900,53.3C960,85,1020,171,1080,176C1140,181,1200,107,1260,101.3C1320,96,1380,160,1410,192L1440,224L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+  <div id="header-block">
+    <h1>Max's Portfolio</h1>
+    <p>Hello, I'm Max Hogan! This is a collection of various projects I've worked
+      on over the years.</p>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path
+      fill="#0099ff"
+      fillOpacity="1"
+      d="M0,96L30,90.7C60,85,120,75,180,96C240,117,300,171,360,208C420,245,480,267,540,240C600,213,660,139,720,90.7C780,43,840,21,900,53.3C960,85,1020,171,1080,176C1140,181,1200,107,1260,101.3C1320,96,1380,160,1410,192L1440,224L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+    ></path>
+  </svg>
 </div>
 
-<span id="featured"/>
-<div className="project-tabs-sticky"><h2>Featured Projects</h2></div>
+<span id="featured" />
+<div className="project-tabs-sticky">
+  <h2>Featured Projects</h2>
+</div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="featured" />
-<span id="work"/>
-<div className="project-tabs-sticky"><h2>Work Experience</h2></div>
+<span id="work" />
+<div className="project-tabs-sticky">
+  <h2>Work Experience</h2>
+</div>
 <ProjectList showImg list={props.data.allMdx.edges} filter="work" />
 
+<ProjectTabs
+  by="Type"
+  data={props.data.allMdx.edges}
+  tabs={["web", "game", ["cli", "CLI"], "collaborative", "joke"]}
+/>
 
-<ProjectTabs by="Type" data={props.data.allMdx.edges} tabs={["web", "game", ["cli", "CLI"], "collaborative", "joke"]} />
+<ProjectTabs
+  by="Language"
+  data={props.data.allMdx.edges}
+  tabs={[["js", "JS"], "java", ["ts", "TS"], "python", "rust"]}
+/>
 
-<ProjectTabs by="Language" data={props.data.allMdx.edges} tabs={[["js", "JS"], "java", ["ts", "TS"], "python", "rust"]} />
+<ProjectTabs
+  by="Library"
+  data={props.data.allMdx.edges}
+  tabs={["vue", "react", ["tensorflow", "TensorFlow"], "electron"]}
+/>
 
-<ProjectTabs by="Library" data={props.data.allMdx.edges} tabs={["vue", "react", ["tensorflow", "TensorFlow"], "electron"]} />
+<ProjectTabs
+  by="DB"
+  data={props.data.allMdx.edges}
+  tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j", "memcached"]}
+/>
 
-<ProjectTabs by="DB" data={props.data.allMdx.edges} tabs={["firestore", ["mongodb", "MongoDB"], "s3", "neo4j", "memcached"]} />
+<ProjectTabs
+  by="Cloud Platform"
+  data={props.data.allMdx.edges}
+  tabs={[
+    "firebase",
+    ["gcp", "GCP"],
+    ["aws", "AWS"],
+    "heroku",
+    ["digitalocean", "Digital Ocean"],
+  ]}
+/>
 
-<ProjectTabs by="Cloud Platform" data={props.data.allMdx.edges} tabs={["firebase", ["gcp", "GCP"], ["aws", "AWS"], "heroku", ["digitalocean", "Digital Ocean"]]} />
-
-
-<span id="socials"/>
+<span id="socials" />
 <div className="project-tabs-sticky">
-    <h2>Social Sites</h2>
-    <p>Check out my socials!</p>
-    <ul id="socials-list">
-        <li><a href="https://github.com/pmaxhogan"><img src="/images/github-icon.png" alt="github icon"/>@pmaxhogan</a></li>
-        <li><a href="https://www.linkedin.com/in/pmaxhogan/"><img src="/images/linkedin-icon.png" alt="linkedin icon"/>@pmaxhogan</a></li>
-    </ul>
+  <h2>Social Sites</h2>
+  <p>Check out my socials!</p>
+  <ul id="socials-list">
+    <li>
+      <a href="https://github.com/pmaxhogan">
+        <img src="/images/github-icon.png" alt="github icon" />
+        @pmaxhogan
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/pmaxhogan/">
+        <img src="/images/linkedin-icon.png" alt="linkedin icon" />
+        @pmaxhogan
+      </a>
+    </li>
+  </ul>
 </div>
 
-
 export const pageQuery = graphql`
-query {
-allMdx {
-edges {
-node {
-id
-frontmatter {
-tags
-title
-summary
-img
-}
-slug
-}
-}
-}
-}
-`
+  query {
+    allMdx {
+      edges {
+        node {
+          id
+          frontmatter {
+            tags
+            title
+            summary
+            img
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`;

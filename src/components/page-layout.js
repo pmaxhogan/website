@@ -46,12 +46,13 @@ export default function Layout(props) {
 
     const categories = "Type,Language,Library,DB,Cloud Platform".split(",");
 
-    const { children, pageContext: { frontmatter }, path} = props;
+    const { children, pageContext = {}, path } = props;
+    const frontmatter = pageContext.frontmatter || {};
     return <>
         <Helmet>
             <meta charSet="utf-8" />
-            <title>{frontmatter.title}</title>
-            <meta name="description" content={frontmatter.summary} />
+            <title>{frontmatter.title || siteMetadata.site.siteMetadata.title}</title>
+            <meta name="description" content={frontmatter.summary || ''} />
         </Helmet>
         <header>
             {/*<a href={"/"}>
@@ -69,15 +70,15 @@ export default function Layout(props) {
         </header>
         <main>
             {path !== "/" && <h1>{frontmatter.title}</h1>}
-            {frontmatter.tags && !frontmatter.tags.includes("no-show") && <TagsList tags={frontmatter.tags}/>}
+            {frontmatter.tags && !frontmatter.tags.includes("no-show") && <TagsList tags={frontmatter.tags}/>} 
             <MDXProvider components={customComponents}>{children}</MDXProvider>
         </main>
         <footer>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fillOpacity="1" d="M0,96L30,90.7C60,85,120,75,180,96C240,117,300,171,360,208C420,245,480,267,540,240C600,213,660,139,720,90.7C780,43,840,21,900,53.3C960,85,1020,171,1080,176C1140,181,1200,107,1260,101.3C1320,96,1380,160,1410,192L1440,224L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
             <div id="footer-main">
-                <code>title: {frontmatter.title}</code>
-                <code>tags: {frontmatter.tags.join(",")}</code>
-                <code>summary: {frontmatter.summary}</code>
+                <code>title: {frontmatter.title || ''}</code>
+                <code>tags: {(frontmatter.tags || []).join(",")}</code>
+                <code>summary: {frontmatter.summary || ''}</code>
             </div>
         </footer>
     </>
