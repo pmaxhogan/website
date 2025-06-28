@@ -1,0 +1,14 @@
+:root{
+    --color: black;
+    --accent-color: lightblue;
+    --background: white;
+    --off-background: #cccccc;
+    --shadow-color: #616161;
+
+    --text-color: var(--color);
+    --header-block-background: var(--accent-color);
+    --heading-background: var(--accent-color);
+    --topbar-background: var(--background);
+    --tab-bg: var(--background);
+    --blockquote-accent: var(--off-background);
+}

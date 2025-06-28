@@ -2,6 +2,7 @@ body{
   margin: 0;
   --header-height: 50px;
   font-family: "Open Sans";
+  color: var(--color);
 }
 
 img{
@@ -12,7 +13,7 @@ img{
   position: sticky;
   top: var(--header-height);
   z-index: 3;
-  background: white;
+  background: var(--tab-bg);
   padding-top: 5px;
 }
 
@@ -30,13 +31,13 @@ blockquote, pre{
 }
 
 blockquote {
-  border-left: 10px solid #ccc;
+  border-left: 10px solid var(--blockquote-accent);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before {
-  color: #ccc;
+  color: var(--blockquote-accent);
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -52,13 +53,13 @@ header{
   align-content: center;
   align-items: center;
   position: fixed;
-  box-shadow: #616161 0 0 2px 1px;
+  box-shadow: var(--shadow-color) 0 0 2px 1px;
   top: 0;
   min-height: var(--header-height);
   width: 100%;
   max-width: 100%;
   z-index: 1000;
-  background: white;
+  background: var(--topbar-background);
   flex-wrap: wrap;
   padding: 5px;
   /*justify-content: space-between;*/
@@ -70,8 +71,8 @@ header img{
 }
 
 header a, h1, h2, h3, h4, h5, h6{
-  color: black;
-  background: lightblue;
+  color: var(--text-color);
+  background: var(--heading-background);
   padding: 4px;
   text-decoration: none;
   font-family: 'Raleway';
@@ -100,11 +101,11 @@ main{
 }
 
 path{
-  fill: lightblue;
+  fill: var(--header-block-background);
 }
 
 #footer-main{
-  background: lightblue;
+  background: var(--header-block-background);;
   padding: 0 10px 10px;
 }
 

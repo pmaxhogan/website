@@ -2,6 +2,7 @@ import * as React from "react"
 import {MDXProvider} from "@mdx-js/react";
 import AsciinemaEmbed from "./asciinema-embed";
 import KAEmbed from "./ka-embed";
+import "../styles/theme.css"
 import "../styles/main.css"
 import {Helmet} from "react-helmet";
 import { useStaticQuery, graphql } from 'gatsby'
