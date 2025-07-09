@@ -36,5 +36,8 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-tabs": "^6.1.0"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
   }
 }

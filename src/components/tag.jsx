@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const tagStyle = (colorStyle = "#000") => ({
+const tagStyle = (colorStyle = "var(--color)") => ({
     border: '1px solid ' + colorStyle,
     color: colorStyle,
     padding: 5,

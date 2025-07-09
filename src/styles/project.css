@@ -28,7 +28,7 @@
 }
 
 .project h2{
-  color: black;
+  color: var(--heading-color);
   margin: 0;
 }
 

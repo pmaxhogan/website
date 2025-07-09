@@ -64,6 +64,7 @@ export default function Layout(props) {
             </a>
             <a href="/#featured">Featured</a>
             <a href="/#work">Work</a>
+            <a href="https://calendar.app.google/aytdj8QRwH1ZdEH18">Schedule a Chat</a>
             <span>
                 Projects by <span className="projects-by">{categories.map(category => <span key={Math.random()}><a href={"/#by-" + category.toLowerCase()}>{category}</a></span>)}</span>
             </span>
